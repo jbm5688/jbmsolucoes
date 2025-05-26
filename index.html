@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experiência gastronômica exclusiva com petiscos refinados, ideal para 6 pessoas. Reserve já pelo WhatsApp!">
+  <title>Petiscos Gourmet Exclusivo | JBMSoluções</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+    header {
+      background: url('https://raw.githubusercontent.com/jbmsolucoes/assets/main/banner-petiscos.png') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      color: #800000;
+    }
+    h2 {
+      color: #8B0000;
+    }
+    p, li {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta a {
+      display: inline-block;
+      background-color: #8B0000;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .cta a:hover {
+      background-color: #a10000;
+    }
+    footer {
+      background-color: #8B0000;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    .whatsapp-float img {
+      width: 60px;
+      height: 60px;
+    }
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+      .cta a {
+        padding: 12px 20px;
+        font-size: 1em;
+      }
+      header {
+        height: 60vh;
+        background-size: cover;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+
+  <div class="container">
+    <h1>Petiscos Gourmet Exclusivo</h1>
+    <p>Receba até <strong>6 convidados</strong> com uma seleção completa de petiscos refinados e acompanhamentos. Uma experiência memorável por apenas <strong>R$ 999,99</strong>.</p>
+
+    <div class="card">
+      <h2>Petiscos</h2>
+      <ul>
+        <li>Tábua de queijos finos: parmesão, gorgonzola, camembert</li>
+        <li>Presunto parma, salame italiano</li>
+        <li>Geleia de pimenta artesanal</li>
+        <li>Molho pesto e patê especial</li>
+        <li>Uvas e castanhas</li>
+        <li>Escondidinho gourmet de carne de sol com purê de batata rústico</li>
+        <li>Lasanha quatro queijos gratinada</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Complementos</h2>
+      <ul>
+        <li>Cesta de torradas, pães finos e chips</li>
+        <li>Taças de cristal e jogo americano decorado</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Sobremesa</h2>
+      <p>Torta trufada de chocolate com creme de castanhas</p>
+    </div>
+
+    <div class="cta">
+      <a href="https://api.whatsapp.com/send?phone=5584981561366" target="_blank">Reservar via WhatsApp</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 JBMSoluções. Siga no Instagram: <a href="https://instagram.com/joaobosco.macedo" target="_blank">@joaobosco.macedo</a></p>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <div class="whatsapp-float">
+    <a href="https://api.whatsapp.com/send?phone=5584981561366" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="Fale conosco no WhatsApp">
+    </a>
+  </div>
+
+  <!-- Google Analytics (exemplo, troque pela sua própria tag) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</body>
+</html>
