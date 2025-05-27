@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeria de Petiscos | JBMSoluções</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .galeria img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav style="background-color: #8B0000; text-align: center; padding: 10px;">
+    <a href="index.html" style="color: white; margin: 0 15px;">Início</a>
+    <a href="depoimentos.html" style="color: white; margin: 0 15px;">Depoimentos</a>
+    <a href="faq.html" style="color: white; margin: 0 15px;">FAQ</a>
+  </nav>
+
+  <div class="container">
+    <h1>Galeria de Petiscos</h1>
+
+    <div class="galeria">
+      <img src="https://raw.githubusercontent.com/jbmsolucoes/assets/main/petisco1.jpg" alt="Tábua de queijos e frios" />
+      <img src="https://raw.githubusercontent.com/jbmsolucoes/assets/main/petisco2.jpg" alt="Mesa decorada com petiscos" />
+      <img src="https://raw.githubusercontent.com/jbmsolucoes/assets/main/petisco3.jpg" alt="Escondidinho gourmet" />
+      <img src="https://raw.githubusercontent.com/jbmsolucoes/assets/main/cliente1.jpg" alt="Cliente feliz com petiscos" />
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 JBMSoluções | <a href="index.html">Voltar ao Início</a></p>
+  </footer>
+</body>
+</html>
