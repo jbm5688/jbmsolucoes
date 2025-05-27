@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ & Depoimentos | JBMSoluções</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
+      color: #333;
+    }
+    nav {
+      background-color: #8B0000;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      color: #800000;
+      text-align: center;
+    }
+    .faq-item, .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .faq-item h3 {
+      color: #8B0000;
+    }
+    .card strong {
+      display: block;
+      margin-top: 10px;
+      color: #8B0000;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    footer {
+      background-color: #8B0000;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="faq.html">FAQ</a>
+    <a href="depoimentos.html">Depoimentos</a>
+  </nav>
+
+  <div class="container">
+    <h1>Perguntas Frequentes</h1>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Com quanto tempo de antecedência devo fazer o pedido?</h3>
+        <p>Idealmente com pelo menos 48h de antecedência, para garantir a qualidade e disponibilidade dos ingredientes.</p>
+      </div>
+      <div class="faq-item">
+        <h3>É possível personalizar os petiscos?</h3>
+        <p>Sim! Podemos adaptar o cardápio para dietas especiais ou preferências, mediante consulta.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Fazem entrega em toda a região?</h3>
+        <p>Atendemos Natal, Parnamirim e regiões próximas. Consulte disponibilidade para seu bairro via WhatsApp.</p>
+      </div>
+    </div>
+
+    <h1>Depoimentos de Clientes</h1>
+    <div class="card">
+      <p>“Foi uma noite incrível com os petiscos da JBS! Todos os meus convidados amaram.”</p>
+      <strong>– Ana Paula, Natal/RN</strong>
+    </div>
+    <div class="card">
+      <p>“Tudo impecável! Do sabor à apresentação. Nota mil!”</p>
+      <strong>– Ricardo Souza, Parnamirim</strong>
+    </div>
+    <div class="card">
+      <p>“Superou as expectativas. Entrega no horário, comida maravilhosa e atendimento excelente.”</p>
+      <strong>– Mariana L., Lagoa Nova</strong>
+    </div>
+
+    <h1>Galeria de Fotos</h1>
+    <div class="gallery">
+      <a href="#img1"><img src="assets/petisco1.png" alt="Petisco 1"></a>
+      <a href="#img2"><img src="assets/petisco2.png" alt="Petisco 2"></a>
+      <a href="#img3"><img src="assets/petisco3.png" alt="Petisco 3"></a>
+      <a href="#img4"><img src="assets/petisco4.png" alt="Petisco 4"></a>
+    </div>
+
+    <div id="img1" class="lightbox">
+      <a href="#"><img src="assets/petisco1.png" alt="Zoom Petisco 1"></a>
+    </div>
+    <div id="img2" class="lightbox">
+      <a href="#"><img src="assets/petisco2.png" alt="Zoom Petisco 2"></a>
+    </div>
+    <div id="img3" class="lightbox">
+      <a href="#"><img src="assets/petisco3.png" alt="Zoom Petisco 3"></a>
+    </div>
+    <div id="img4" class="lightbox">
+      <a href="#"><img src="assets/petisco4.png" alt="Zoom Petisco 4"></a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 JBMSoluções | <a href="index.html">Voltar ao Início</a></p>
+  </footer>
+</body>
+</html>
