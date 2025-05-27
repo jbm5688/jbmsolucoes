@@ -196,6 +196,21 @@
     gtag('js', new Date());
     gtag('config', 'G-D9MNCGHSKR');
   </script>
+  /* Acrescentqado para o realce do icone ativo.
+  <script>
+    // seleciona todos os links do nav
+    const navLinks = document.querySelectorAll('nav a');
+
+    // caminho atual (ex: "/index.html" ou "/")
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPath) {
+        link.classList.add('active');
+      }
+    });
+</script>
 
 </body>
 </html>
