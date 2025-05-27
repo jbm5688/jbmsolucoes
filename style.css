@@ -1,46 +1,30 @@
-  /* Destacando o icone atvo na pagina inicial */
-    nav a.active {
-      color: #fafafa;             /* cor do texto ativo */
-      background-color: #a10000;  /* fundo destacado */
-      border-radius: 4px;
-      padding: 5px 10px;
-    }
- /* Destacando o icone atvo na pagina inicial */
-    nav a.active {
-      color: #fafafa;             /* cor do texto ativo */
-      background-color: #a10000;  /* fundo destacado */
-      border-radius: 4px;
-      padding: 5px 10px;
-    }
-    .galeria {
+   .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
-      margin-top: 30px;
     }
-    .galeria img {
-      width: 100%;
+  .galeria-item {
+      display: flex;
+      flex-direction: column;
       border-radius: 12px;
+      overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
- /* Destacando o icone atvo na pagina inicial */
+  .galeria-item img {
+      width: 100%;
+      display: block;
+    }
+  .caption {
+      padding: 10px;
+      background: #fafafa;
+      text-align: center;
+      font-size: 1em;
+      color: #333;
+    }
+   /* Destacando o icone atvo na pagina inicial */
     nav a.active {
       color: #fafafa;             /* cor do texto ativo */
       background-color: #a10000;  /* fundo destacado */
       border-radius: 4px;
       padding: 5px 10px;
-    }
- /* Destacando o icone atvo na pagina inicial */
-    nav a.active {
-      color: #fafafa;             /* cor do texto ativo */
-      background-color: #a10000;  /* fundo destacado */
-      border-radius: 4px;
-      padding: 5px 10px;
-    }
-/* Destacando o icone atvo na pagina inicial */
-    nav a.active {
-      color: #fafafa;             /* cor do texto ativo */
-      background-color: #a10000;  /* fundo destacado */
-      border-radius: 4px;
-      padding: 5px 10px;
-    }
+    } 
