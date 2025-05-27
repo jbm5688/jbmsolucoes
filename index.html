@@ -7,20 +7,26 @@
   <title>Petiscos Gourmet Exclusivo | JBMSoluções</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="https://raw.githubusercontent.com/jbmsolucoes/assets/main/favicon.ico" type="image/x-icon">
-  <img src="https://jbm5688.github.io/jbmsolucoes/assets/petisco1.png" alt="Petisco refinado">
-  <img src="assets/CRIATIVO01.png" alt="Petisco refinado" style="max-width: 300px;">
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background-color: #fafafa;
       color: #333;
-      <nav style="background-color: #8B0000; text-align: center; padding: 10px;">
-      <a href="index.html" style="color: white; margin: 0 15px; text-decoration: none;">Início</a>
-      <a href="depoimentos.html" style="color: white; margin: 0 15px; text-decoration: none;">Depoimentos</a>
-      <a href="galeria.html" style="color: white; margin: 0 15px; text-decoration: none;">Galeria</a>
-      <a href="faq.html" style="color: white; margin: 0 15px; text-decoration: none;">FAQ</a>
-      </nav>
+    }
+    nav {
+      background-color: #8B0000;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     header {
       background: url('https://raw.githubusercontent.com/jbmsolucoes/assets/main/banner-petiscos.png') center/cover no-repeat;
@@ -108,8 +114,20 @@
   </style>
 </head>
 <body>
+
+  <!-- Navegação -->
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="experiencia.html">Experiência</a>
+    <a href="depoimentos.html">Depoimentos</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+
+  <!-- Banner de destaque -->
   <header></header>
 
+  <!-- Conteúdo principal -->
   <div class="container">
     <h1>Petiscos Gourmet Exclusivo</h1>
     <p>Receba até <strong>6 convidados</strong> com uma seleção completa de petiscos refinados e acompanhamentos. Uma experiência memorável por apenas <strong>R$ 999,99</strong>.</p>
@@ -145,8 +163,11 @@
     </div>
   </div>
 
+  <!-- Rodapé -->
   <footer>
-    <p>© 2025 JBMSoluções. Siga no Instagram: <a href="https://instagram.com/joaobosco.macedo" target="_blank">@joaobosco.macedo</a></p>
+    <p>© 2025 JBMSoluções. Siga no Instagram: 
+      <a href="https://instagram.com/joaobosco.macedo" target="_blank">@joaobosco.macedo</a>
+    </p>
   </footer>
 
   <!-- Botão flutuante do WhatsApp -->
@@ -156,13 +177,14 @@
     </a>
   </div>
 
-  <!-- Google Analytics (exemplo, troque pela sua própria tag) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google Analytics com ID real -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D9MNCGHSKR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-D9MNCGHSKR');
   </script>
+
 </body>
 </html>
