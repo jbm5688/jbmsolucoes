@@ -7,9 +7,8 @@
   <title>Petiscos Gourmet Exclusivo | JBMSoluções</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="https://raw.githubusercontent.com/jbmsolucoes/assets/main/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
   <style>
-  body {
+    body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
       background-color: #fafafa;
@@ -30,11 +29,8 @@
       text-decoration: underline;
     }
     header {
-      
-      <h1 style="font-size: 2.5em; color: white; text-shadow: 2px black;">Petiscos Gourmet Exclusivo</h1>
-
       background: url('https://raw.githubusercontent.com/jbmsolucoes/assets/main/banner-petiscos.png') center/cover no-repeat;
-      height: 50px;
+      height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -92,6 +88,11 @@
       color: #fff;
       text-decoration: underline;
     }
+    .footer-links img {
+      width: 24px;
+      vertical-align: middle;
+      margin: 0 5px;
+    }
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -111,7 +112,7 @@
         font-size: 1em;
       }
       header {
-        height: 60vh;
+        height: 200px;
         background-size: cover;
       }
     }
@@ -126,6 +127,8 @@
     <a href="depoimentos.html">Depoimentos</a>
     <a href="galeria.html">Galeria</a>
     <a href="faq.html">FAQ</a>
+    <a href="https://www.facebook.com/jbm5688" target="_blank">Facebook</a>
+    <a href="https://jbm5688.folheados.com/" target="_blank">Nossa Loja</a>
   </nav>
 
   <!-- Banner de destaque -->
@@ -134,7 +137,10 @@
   <!-- Conteúdo principal -->
   <div class="container">
     <h1>Petiscos Gourmet Exclusivo</h1>
-    <p>Receba até <strong>6 convidados</strong> com uma seleção completa de petiscos refinados e acompanhamentos. Uma experiência memorável por apenas <strong>R$ 999,99</strong>.</p>
+    <p>
+      Receba até <strong>6 convidados</strong> com uma seleção completa de petiscos refinados e acompanhamentos. 
+      Uma experiência memorável por apenas <strong>R$ 999,99</strong>.
+    </p>
 
     <div class="card">
       <h2>Petiscos</h2>
@@ -163,14 +169,23 @@
     </div>
 
     <div class="cta">
-      <a href="https://api.whatsapp.com/send?phone=5584981561366" target="_blank">Reservar via WhatsApp</a>
+      <a href="https://api.whatsapp.com/send?phone=5584981561366" target="_blank">
+        Reservar via WhatsApp
+      </a>
     </div>
   </div>
 
   <!-- Rodapé -->
   <footer>
-    <p>© 2025 JBMSoluções. Siga no Instagram: 
-      <a href="https://instagram.com/joaobosco.macedo" target="_blank">@joaobosco.macedo</a>
+    <p>© 2025 JBMSoluções</p>
+    <p class="footer-links">
+      <a href="https://instagram.com/joaobosco.macedo" target="_blank">@joaobosco.macedo</a> |
+      <a href="https://www.facebook.com/jbm5688" target="_blank">
+        <img src="assets/facebook-icon.png" alt="Facebook">
+      </a>
+      <a href="https://jbm5688.folheados.com/" target="_blank">
+        <img src="assets/shop-icon.png" alt="Loja Folheados">
+      </a>
     </p>
   </footer>
 
@@ -189,21 +204,6 @@
     gtag('js', new Date());
     gtag('config', 'G-D9MNCGHSKR');
   </script>
-  /* Acrescentqado para o realce do icone ativo.
-  <script>
-    // seleciona todos os links do nav
-    const navLinks = document.querySelectorAll('nav a');
-
-    // caminho atual (ex: "/index.html" ou "/")
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      if (href === currentPath) {
-        link.classList.add('active');
-      }
-    });
-</script>
 
 </body>
 </html>
