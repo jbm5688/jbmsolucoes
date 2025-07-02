@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagamento</title>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+            background: #f9f9f9;
+        }
+        h1 { margin-bottom: 20px; }
+        .opcoes button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #pixArea {
+            margin-top: 30px;
+        }
+        input[type="email"] {
+            padding: 8px;
+            font-size: 14px;
+            width: 250px;
+            margin-top: 10px;
+        }
+        #confirmarBtn {
+            padding: 8px 16px;
+            font-size: 14px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha a forma de pagamento</h1>
+    <div class="opcoes">
+        <button onclick="pagarPix()">Pagar com Pix</button>
+        <button onclick="alert('Redirecionando para pagamento com Cartão...')">Pagar com Cartão</button>
+        <button onclick="alert('Redirecionando para PayPal...')">Pagar com PayPal</button>
+    </div>
+
+    <div id="pixArea"></div>
+
+    <script>
+        emailjs.init("Y_b1YfPnGVmD1CptJ"); // Public Key fornecida por você
+
+    function pagarPix() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const produto = urlParams.get('produto') || "Produto Desconhecido";
+    const valor = urlParams.get('valor') || "R$ 00,00";
+    const chavePix = "jbm5688@hotmail.com";
+
+    const valorNumerico = valor.replace(/[^\d,]/g, '').replace(',', '.');
+
+    // Geração do código Pix para QR Code (formato simples de texto)
+    const payloadPix = `00020126360014BR.GOV.BCB.PIX0114${chavePix}5204000053039865405${valorNumerico}5802BR5925Comprador Online Ltda6009SAO PAULO62100506ABCDE6304`;
+
+    const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(payloadPix)}`;
+
+    document.getElementById("pixArea").innerHTML = `
+        <h2>Pagamento via Pix</h2>
+        <p><strong>Produto:</strong> ${produto}</p>
+        <p><strong>Valor:</strong> ${valor}</p>
+        <p><strong>Chave Pix:</strong> ${chavePix}</p>
+        <img src="${qrCodeURL}" alt="QR Code Pix" style="margin: 20px 0;">
+        <p>Após o pagamento, insira seu e-mail:</p>
+        <input type="email" id="emailUsuario" placeholder="seuemail@exemplo.com" required>
+        <button id="confirmarBtn" onclick="enviarConfirmacao('${valor}', '${chavePix}')">Confirmar</button>
+    `;
+}
+
+        function enviarConfirmacao(valor, chavePix) {
+            const emailInformado = document.getElementById("emailUsuario").value;
+
+            if (!emailInformado) {
+                alert("Por favor, insira um e-mail válido.");
+                return;
+            }
+
+            const templateParams = {
+                to_email: emailInformado,
+                valor_pagamento: valor,
+                chave_pix: chavePix,
+                mensagem: "Seu pedido foi confirmado e será enviado para o setor de entregas. O prazo de entrega pode chegar até 45 dias, dependendo da origem do produto."
+            };
+
+            emailjs.send("service_p7luhzr", "default", templateParams)
+                .then(function(response) {
+                    alert("Pagamento confirmado! Verifique sua caixa de e-mail.");
+                }, function(error) {
+                    alert("Erro ao enviar confirmação: " + error.text);
+                });
+        }
+    </script>
+</body>
+</html>

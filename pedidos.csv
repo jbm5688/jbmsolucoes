@@ -1,0 +1,4 @@
+id_pedido,nome,email,produto,valor,status_pagamento,codigo_rastreio,status_envio
+1,João Silva,joao@email.com,Massageador Portátil,48.00,pago,,aguardando
+2,Maria Lima,maria@email.com,Barbeador Portátil,47.08,aguardando,,aguardando
+3,Lucas Reis,lucas@email.com,Copo Automotivo,119.00,pago,AA123456BR,enviado

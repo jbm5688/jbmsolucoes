@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Produto</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; background: #f3f3f3; }
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+        iframe { margin-top: 20px; width: 90%; height: 360px; }
+    </style>
+</head>
+<body>
+    <h1>Informações do Produto</h1>
+    <div class="botoes">
+        <button onclick="falarSuporte()">Falar com Suporte</button>
+        <button onclick="verVideo()">Mais Detalhes (Vídeo)</button>
+    </div>
+    <div id="conteudoExtra"></div>
+
+    <script>
+        function falarSuporte() {
+            window.open("https://wa.me/5584981561366", "_blank");
+        }
+        function verVideo() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const produto = urlParams.get('produto');
+            document.getElementById("conteudoExtra").innerHTML = `
+                <h2>Vídeo do Produto ${produto}</h2>
+                <video controls src="video/VIDEO${produto}.mp4"></video>
+            `;
+        }
+    </script>
+</body>
+</html>

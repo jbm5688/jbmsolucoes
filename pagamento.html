@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagamento</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("Y_b1YfPnGVmD1CptJ");
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    #qrcode {
+      margin: 20px 0;
+    }
+    .formas button {
+      margin: 10px 5px;
+      width: 120px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Resumo do Pedido</h2>
+    <p><strong>Produto:</strong> <span id="nomeProduto"></span></p>
+    <p><strong>Valor:</strong> <span id="valorProduto"></span></p>
+
+    <div class="formas">
+      <h3>Formas de pagamento:</h3>
+      <button onclick="pagarPix()">Pix</button>
+      <button onclick="alert('Redirecionando para Cartão...')">Cartão</button>
+      <button onclick="alert('Redirecionando para PayPal...')">PayPal</button>
+    </div>
+
+    <div id="areaPix" style="display:none;">
+      <h4>Escaneie o QR Code Pix:</h4>
+      <img id="qrcode" src="" width="200" alt="QR Code Pix">
+      <input type="email" id="emailCliente" placeholder="Digite seu e-mail para confirmação" />
+      <button onclick="confirmarPagamento()">Confirmar</button>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const produto = decodeURIComponent(urlParams.get("produto") || "Produto Desconhecido");
+    const valor = decodeURIComponent(urlParams.get("valor") || "R$ 0,00");
+
+    document.getElementById("nomeProduto").innerText = produto;
+    document.getElementById("valorProduto").innerText = valor;
+
+    function pagarPix() {
+      const chavePix = "jbm5688@hotmail.com";
+      const valorLimpo = valor.replace("R$", "").trim().replace(",", ".");
+      const payload = `00020126360014BR.GOV.BCB.PIX0114${chavePix}5204000053039865405${valorLimpo}5802BR5925JBM Solucoes6009SAO PAULO62070503***6304`;
+      const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(payload)}&size=300x300`;
+
+      // const qrCodeUrl = `https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl=${encodeURIComponent(payload)}`;
+      document.getElementById("qrcode").src = qrCodeUrl;
+      document.getElementById("areaPix").style.display = "block";
+    }
+
+    function confirmarPagamento() {
+      const email = document.getElementById("emailCliente").value;
+      if (!email) return alert("Por favor, digite um e-mail válido.");
+
+      const templateParams = {
+        valor_pagamento: valor,
+        chave_pix: "jbm5688@hotmail.com",
+        mensagem: `Pagamento confirmado para o produto: ${produto}`,
+        email: email
+      };
+
+      emailjs.send("service_p7luhzr", "template_bscroiq", templateParams)
+        .then(() => {
+          alert("Pagamento confirmado!\nProduto: " + produto + "\nValor: " + valor + "\nE-mail: " + email);
+        }, (error) => {
+          console.error("Erro ao enviar e-mail:", error);
+          alert("Erro ao enviar confirmação. Tente novamente.");
+        });
+    }
+  </script>
+</body>
+</html>

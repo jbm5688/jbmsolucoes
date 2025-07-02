@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomeçar com Propósito</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f8f8; }
+        header, footer { text-align: center; padding: 20px; background: #fff; }
+        .produtos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
+        article { background: #fff; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 250px; text-align: center; padding: 15px; }
+        img { width: 100%; border-radius: 8px; transition: opacity 0.5s; }
+        h2 { font-size: 18px; margin: 10px 0 5px; }
+        p { font-size: 16px; margin: 5px 0; }
+        .botoes a { display: block; margin: 5px 0; padding: 10px; background: #007bff; color: white; border-radius: 6px; text-decoration: none; }
+        .botoes a:hover { background: #0056b3; }
+        .descricao-resumida { font-size: 14px; color: #666; margin-bottom: 10px; }
+    </style>
+    <script>
+        const imagens = {};
+        function rotacionarImagem(id, imagensList) {
+            let i = 0;
+            imagens[id] = setInterval(() => {
+                document.getElementById(id).src = imagensList[i];
+                i = (i + 1) % imagensList.length;
+            }, 1000);
+        }
+        function pararRotacao(id, original) {
+            clearInterval(imagens[id]);
+            document.getElementById(id).src = original;
+        }
+
+        window.onload = function () {
+            const Produto1 = "Massageador Portátil";
+            const Produto2 = "Barbeador Elétrico Portátil";
+            const Produto3 = "Lixa Aparadora de Unhas de Bebês";
+            const Produto4 = "Mini Máquina de Costura Portátil";
+            const Produto5 = "Copo Elétrico Automotivo";
+
+            const Valor1 = "R$ 48,00";
+            const Valor2 = "R$ 47,00";
+            const Valor3 = "R$ 46,00";
+            const Valor4 = "R$ 165,00";
+            const Valor5 = "R$ 119,00";
+
+            const Desc1 = "Alívio instantâneo com tecnologia portátil";
+            const Desc2 = "Praticidade e precisão no seu barbeado";
+            const Desc3 = "Corte seguro para bebês com lixa elétrica";
+            const Desc4 = "Costura fácil em qualquer lugar";
+            const Desc5 = "Bebidas quentes no carro em minutos";
+
+            document.getElementById("titulo1").innerText = Produto1;
+            document.getElementById("titulo2").innerText = Produto2;
+            document.getElementById("titulo3").innerText = Produto3;
+            document.getElementById("titulo4").innerText = Produto4;
+            document.getElementById("titulo5").innerText = Produto5;
+
+            document.getElementById("valor1").innerText = Valor1;
+            document.getElementById("valor2").innerText = Valor2;
+            document.getElementById("valor3").innerText = Valor3;
+            document.getElementById("valor4").innerText = Valor4;
+            document.getElementById("valor5").innerText = Valor5;
+
+            document.getElementById("desc1").innerText = Desc1;
+            document.getElementById("desc2").innerText = Desc2;
+            document.getElementById("desc3").innerText = Desc3;
+            document.getElementById("desc4").innerText = Desc4;
+            document.getElementById("desc5").innerText = Desc5;
+
+            document.getElementById("btnComprar1").href = `pagamento.html?produto=${encodeURIComponent(Produto1)}&valor=${encodeURIComponent(Valor1)}`;
+            document.getElementById("btnComprar2").href = `pagamento.html?produto=${encodeURIComponent(Produto2)}&valor=${encodeURIComponent(Valor2)}`;
+            document.getElementById("btnComprar3").href = `pagamento.html?produto=${encodeURIComponent(Produto3)}&valor=${encodeURIComponent(Valor3)}`;
+            document.getElementById("btnComprar4").href = `pagamento.html?produto=${encodeURIComponent(Produto4)}&valor=${encodeURIComponent(Valor4)}`;
+            document.getElementById("btnComprar5").href = `pagamento.html?produto=${encodeURIComponent(Produto5)}&valor=${encodeURIComponent(Valor5)}`;
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Recomeçar com Propósito</h1>
+        <p>Gratidão move milagres — e esse site é o início de uma nova história guiada por Deus.</p>
+    </header>
+
+    <main>
+        <section class="produtos">
+            <!-- Produto 1 -->
+            <article>
+                <img id="produto1" src="img/IMAGEM1-1.PNG" alt="Produto 1"
+                    onmouseover="rotacionarImagem('produto1', ['img/IMAGEM1-1.PNG', 'img/IMAGEM1-2.PNG', 'img/IMAGEM1-3.PNG'])"
+                    onmouseout="pararRotacao('produto1', 'img/IMAGEM1-1.PNG')">
+                <h2 id="titulo1"></h2>
+                <p class="descricao-resumida" id="desc1"></p>
+                <p id="valor1"></p>
+                <div class="botoes">
+                    <a id="btnComprar1">Comprar Agora</a>
+                    <a href="detalhes-do-produto.html?produto=1">Mais Informações</a>
+                </div>
+            </article>
+
+            <!-- Produto 2 -->
+            <article>
+                <img id="produto2" src="img/IMAGEM2-1.PNG" alt="Produto 2"
+                    onmouseover="rotacionarImagem('produto2', ['img/IMAGEM2-1.PNG', 'img/IMAGEM2-2.PNG', 'img/IMAGEM2-3.PNG'])"
+                    onmouseout="pararRotacao('produto2', 'img/IMAGEM2-1.PNG')">
+                <h2 id="titulo2"></h2>
+                <p class="descricao-resumida" id="desc2"></p>
+                <p id="valor2"></p>
+                <div class="botoes">
+                    <a id="btnComprar2">Comprar Agora</a>
+                    <a href="detalhes-do-produto.html?produto=2">Mais Informações</a>
+                </div>
+            </article>
+
+            <!-- Produto 3 -->
+            <article>
+                <img id="produto3" src="img/IMAGEM3-1.PNG" alt="Produto 3"
+                    onmouseover="rotacionarImagem('produto3', ['img/IMAGEM3-1.PNG', 'img/IMAGEM3-2.PNG', 'img/IMAGEM3-3.PNG'])"
+                    onmouseout="pararRotacao('produto3', 'img/IMAGEM3-1.PNG')">
+                <h2 id="titulo3"></h2>
+                <p class="descricao-resumida" id="desc3"></p>
+                <p id="valor3"></p>
+                <div class="botoes">
+                    <a id="btnComprar3">Comprar Agora</a>
+                    <a href="detalhes-do-produto.html?produto=3">Mais Informações</a>
+                </div>
+            </article>
+
+            <!-- Produto 4 -->
+            <article>
+                <img id="produto4" src="img/IMAGEM4-1.PNG" alt="Produto 4"
+                    onmouseover="rotacionarImagem('produto4', ['img/IMAGEM4-1.PNG', 'img/IMAGEM4-2.PNG', 'img/IMAGEM4-3.PNG'])"
+                    onmouseout="pararRotacao('produto4', 'img/IMAGEM4-1.PNG')">
+                <h2 id="titulo4"></h2>
+                <p class="descricao-resumida" id="desc4"></p>
+                <p id="valor4"></p>
+                <div class="botoes">
+                    <a id="btnComprar4">Comprar Agora</a>
+                    <a href="detalhes-do-produto.html?produto=4">Mais Informações</a>
+                </div>
+            </article>
+
+            <!-- Produto 5 -->
+            <article>
+                <img id="produto5" src="img/IMAGEM5-1.PNG" alt="Produto 5"
+                    onmouseover="rotacionarImagem('produto5', ['img/IMAGEM5-1.PNG', 'img/IMAGEM5-2.PNG', 'img/IMAGEM5-3.PNG'])"
+                    onmouseout="pararRotacao('produto5', 'img/IMAGEM5-1.PNG')">
+                <h2 id="titulo5"></h2>
+                <p class="descricao-resumida" id="desc5"></p>
+                <p id="valor5"></p>
+                <div class="botoes">
+                    <a id="btnComprar5">Comprar Agora</a>
+                    <a href="detalhes-do-produto.html?produto=5">Mais Informações</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>“Entrega o teu caminho ao Senhor; confia nele, e o mais Ele fará.” — Salmo 37:5</p>
+        <p>© 2025 JBM - Soluções | Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inserir Código de Rastreio</title>
+</head>
+<body>
+  <h1>Inserir Código de Rastreio</h1>
+  <form method="POST" action="/salvar-rastreio">
+    <label for="pedido">ID do Pedido ou E-mail do Cliente:</label><br />
+    <input type="text" id="pedido" name="pedido" required /><br /><br />
+
+    <label for="codigo">Código de Rastreio:</label><br />
+    <input type="text" id="codigo" name="codigo" required /><br /><br />
+
+    <button type="submit">Salvar Rastreio e Enviar E-mail</button>
+  </form>
+
+  <hr>
+  <h2>Ou envie um rastreio de teste</h2>
+  <form method="POST" action="/teste-rastreio">
+    <input type="hidden" name="pedido" value="jbm5688@gmail.com" />
+    <input type="hidden" name="codigo" value="TESTE123456BR" />
+    <button type="submit">Enviar E-mail de Teste</button>
+  </form>
+</body>
+</html>
